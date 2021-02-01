@@ -18,7 +18,7 @@ On startup, the cluster healer
   
 ## Workers  
 For this assignment I was provided with a worker application, `faulty-worker.jar`. On startup, this application connects to Zookeeper
- and creates a sequential znode called `worker_` under the `/workers` parent znode, e.g. `/workers
+ and creates a persistent znode called `worker_` under the `/workers` parent znode, e.g. `/workers
  /worker_0000001`. This worker is programmed to continually crash at random intervals, which will cause the znode it
   created to be removed.
 
@@ -56,7 +56,7 @@ Contains a main method which creates a new `ClusterHealer` instance and calls me
 
 ## Building and Running the Cluster Healer Application
 ### Building
-Use the maven `package` goal from the IntelliJ tool window to build an executable jar from your code. The jar will be called `cluster-healer-1.0-SNAPSHOT-jar-with-dependencies.jar`and it will be in the `target` folder in your project. 
+I Used the maven `package` goal from the IntelliJ tool window to build an executable jar from my code. The jar is called `cluster-healer-1.0-SNAPSHOT-jar-with-dependencies.jar`and it will be in the `target` folder of the project. 
 
 ### Running
 Running this command from the `cluster-healer` project directory will start up 3 worker instances using the provided `faulty-worker.jar`, and will monitor the cluster to ensure that 3 instances are always running. **Ensure that you've started the Zookeeper server first**.
